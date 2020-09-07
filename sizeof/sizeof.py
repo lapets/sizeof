@@ -14,6 +14,24 @@ def sizeof(obj, deep=False, _exclude=None):
     Estimate the memory consumption of a Python object (either
     the root object itself exclusively or, in the case of a deep
     traversal, the entire tree of objects reachable from it).
+
+    >>> sys.getsizeof([]) == sizeof([])
+    True
+    >>> sys.getsizeof(123) == sizeof(123)
+    True
+    >>> sizeof('ab') == sizeof('a') + 1
+    True
+    >>> xs = [1, 2, 3]
+    >>> ys = {'a':1, 'b':2, 'c':3}
+    >>> zs = {frozenset([1, 2, 3]): [1, 2, 3], frozenset(['a']): 'bc'}
+    >>> sys.getsizeof(xs) == sizeof(xs)
+    True
+    >>> sys.getsizeof(xs) < sizeof(xs, deep=True)
+    True
+    >>> sizeof([xs], deep=True) > sys.getsizeof([xs])
+    True
+    >>> sizeof([xs, ys, zs], deep=True) > 2 * sizeof([xs, xs, xs], deep=True)
+    True
     """
     if not deep or isinstance(obj, (str, bytes, bytearray, int, float)):
         return sys.getsizeof(obj)
