@@ -32,6 +32,8 @@ def sizeof(obj, deep=False, _exclude=None):
     True
     >>> sizeof([xs, ys, zs], deep=True) > 2 * sizeof([xs, xs, xs], deep=True)
     True
+    >>> sizeof([xs], deep=True, _exclude=set([id(xs)])) == sizeof([xs])
+    True
     """
     if not deep or isinstance(obj, (str, bytes, bytearray, int, float)):
         return sys.getsizeof(obj)
@@ -55,9 +57,9 @@ def sizeof(obj, deep=False, _exclude=None):
             for v in obj
         )
 
-    raise ValueError(
+    raise ValueError( # pragma: no cover
         'object not supported by current version of sizeof'
     )
 
 if __name__ == "__main__":
-    doctest.testmod()
+    doctest.testmod() # pragma: no cover
