@@ -7,7 +7,17 @@ common Python data structures.
 from __future__ import annotations
 import doctest
 import sys
+import struct
 import collections
+
+def arch():
+    """
+    Determine the architecture.
+
+    >>> arch() in [32, 64]
+    True
+    """
+    return struct.calcsize("P") * 8
 
 def sizeof(obj, deep=False, _exclude=None):
     """
