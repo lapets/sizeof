@@ -32,6 +32,8 @@ def sizeof(obj, deep=False, _exclude=None):
     True
     >>> sizeof([xs, ys, zs], deep=True) > 2 * sizeof([xs, xs, xs], deep=True)
     True
+    >>> sizeof([xs, xs], deep=True) < sizeof([xs, [1, 2, 3]], deep=True)
+    True
     >>> sizeof([xs], deep=True, _exclude=set([id(xs)])) == sizeof([xs])
     True
     """
@@ -44,16 +46,18 @@ def sizeof(obj, deep=False, _exclude=None):
         return 0
 
     if isinstance(obj, collections.abc.Mapping):
+        _exclude.add(id(obj))
         iterator = obj.items() if isinstance(obj, dict) else obj.iteritems()
         return sys.getsizeof(obj) + sum(
-            sizeof(k, deep=True, _exclude=_exclude.union({id(obj)})) +\
-            sizeof(v, deep=True, _exclude=_exclude.union({id(obj)}))
+            sizeof(k, deep=True, _exclude=_exclude) +\
+            sizeof(v, deep=True, _exclude=_exclude)
             for (k, v) in iterator
         )
 
     if isinstance(obj, collections.abc.Container):
+        _exclude.add(id(obj))
         return sys.getsizeof(obj) + sum(
-            sizeof(v, deep=True, _exclude=_exclude.union({id(obj)}))
+            sizeof(v, deep=True, _exclude=_exclude)
             for v in obj
         )
 
