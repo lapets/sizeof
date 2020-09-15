@@ -4,11 +4,14 @@ sizeof
 
 Simple function for measuring the size in memory of common Python data structures.
 
-|pypi|
+|pypi| |travis|
 
 .. |pypi| image:: https://badge.fury.io/py/sizeof.svg
    :target: https://badge.fury.io/py/sizeof
    :alt: PyPI version and link.
+
+.. |travis| image:: https://travis-ci.com/lapets/sizeof.svg?branch=master
+   :target: https://travis-ci.com/lapets/sizeof
 
 Package Installation and Usage
 ------------------------------
