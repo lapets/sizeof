@@ -4,7 +4,7 @@ sizeof
 
 Simple function for measuring the size in memory of common Python data structures.
 
-|pypi| |travis|
+|pypi| |travis| |coveralls|
 
 .. |pypi| image:: https://badge.fury.io/py/sizeof.svg
    :target: https://badge.fury.io/py/sizeof
@@ -12,6 +12,9 @@ Simple function for measuring the size in memory of common Python data structure
 
 .. |travis| image:: https://travis-ci.com/lapets/sizeof.svg?branch=master
    :target: https://travis-ci.com/lapets/sizeof
+
+.. |coveralls| image:: https://coveralls.io/repos/github/lapets/sizeof/badge.svg?branch=master
+   :target: https://coveralls.io/github/lapets/sizeof?branch=master
 
 Package Installation and Usage
 ------------------------------
