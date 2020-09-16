@@ -2,16 +2,39 @@ notifications:
   email:
     on_success: never
     on_failure: always
-language: python
-python:
-  - "3.8"
-cache: pip
-install:
-  - pip install pylint
-  - pip install coveralls
-  - pip install .
+matrix:
+  include:
+    - os: linux
+      language: python
+      python:
+        - "3.8"
+      install:
+        - pip install pylint
+        - pip install coveralls
+        - pip install .
+      after_success:
+        - coveralls
+    - os: osx
+      language: generic
+      before_install:
+        - brew upgrade python@3.8
+        - sudo python3.8 -m pip install -U pip
+        - sudo python3.8 -m pip install setuptools
+      install:
+        - sudo python3.8 -m pip install pylint
+        - pip install coverage
+        - sudo python3.8 -m pip install nose
+        - sudo python3.8 -m pip install .
+    - os: windows
+      language: sh
+      before_install:
+        - choco install python --version=3.8.3
+      env: PATH=/c/Python38:/c/Python38/Scripts:$PATH
+      install:
+        - pip install pylint
+        - pip install coverage
+        - pip install nose
+        - pip install .
 script:
   - pylint sizeof
   - nosetests
-after_success:
-- coveralls
