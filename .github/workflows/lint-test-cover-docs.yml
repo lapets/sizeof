@@ -10,12 +10,12 @@ jobs:
         python-version: ['3.7', '3.8', '3.9']
         architecture: ['x86', 'x64']
         exclude:
-          - {os: 'ubuntu-latest', 'python-version': '3.7', architecture: 'x86'}
-          - {os: 'ubuntu-latest', 'python-version': '3.8', architecture: 'x86'}
-          - {os: 'ubuntu-latest', 'python-version': '3.9', architecture: 'x86'}
-          - {os: 'macos-latest', 'python-version': '3.7', architecture: 'x86'}
-          - {os: 'macos-latest', 'python-version': '3.8', architecture: 'x86'}
-          - {os: 'macos-latest', 'python-version': '3.9', architecture: 'x86'}
+          - {os: 'ubuntu-latest', python-version: '3.7', architecture: 'x86'}
+          - {os: 'ubuntu-latest', python-version: '3.8', architecture: 'x86'}
+          - {os: 'ubuntu-latest', python-version: '3.9', architecture: 'x86'}
+          - {os: 'macos-latest', python-version: '3.7', architecture: 'x86'}
+          - {os: 'macos-latest', python-version: '3.8', architecture: 'x86'}
+          - {os: 'macos-latest', python-version: '3.9', architecture: 'x86'}
     name: "Python ${{ matrix.python-version }}"
     steps:
       - uses: actions/checkout@v2
@@ -26,7 +26,7 @@ jobs:
           architecture: ${{ matrix.architecture }}
       - name: Lint and test module.
         run: |
-          pip install -U pylint coverage nose .
+          pip install -U pylint coverage coveralls nose .
           python -m pylint sizeof # Check against linting rules.
           python -m nose --cover-erase # Test using nose.
       - name: Publish coverage results.
