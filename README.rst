@@ -16,13 +16,15 @@ Simple function for determining the memory usage of common Python values and obj
 
 .. |travis| image:: https://travis-ci.com/lapets/sizeof.svg?branch=master
    :target: https://travis-ci.com/lapets/sizeof
+   :alt: Travis CI build status.
 
 .. |coveralls| image:: https://coveralls.io/repos/github/lapets/sizeof/badge.svg?branch=master
    :target: https://coveralls.io/github/lapets/sizeof?branch=master
+   :alt: Coveralls test coverage summary.
 
 Package Installation and Usage
 ------------------------------
-The package is available on PyPI::
+The package is available on `PyPI <https://pypi.org/project/sizeof/>`_::
 
     python -m pip install sizeof
 
@@ -70,9 +72,10 @@ The documentation can be generated automatically from the source files using `Sp
 
 Testing and Conventions
 -----------------------
-All unit tests are executed and their coverage is measured when using `nose <https://nose.readthedocs.io/>`_ (see ``setup.cfg`` for configution details)::
+All unit tests are executed and their coverage is measured when using `nose <https://nose.readthedocs.io/>`_ (see ``setup.cfg`` for configuration details)::
 
-    nosetests
+    python -m pip install nose coverage
+    nosetests --cover-erase
 
 Alternatively, all unit tests are included in the module itself and can be executed using `doctest <https://docs.python.org/3/library/doctest.html>`_::
 
@@ -80,11 +83,12 @@ Alternatively, all unit tests are included in the module itself and can be execu
 
 Style conventions are enforced using `Pylint <https://www.pylint.org/>`_::
 
+    python -m pip install pylint
     pylint sizeof
 
 Contributions
 -------------
-In order to contribute to the source code, open an issue or submit a pull request on the GitHub page for this library.
+In order to contribute to the source code, open an issue or submit a pull request on the `GitHub page <https://github.com/lapets/sizeof>`_ for this library.
 
 Versioning
 ----------
