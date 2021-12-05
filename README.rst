@@ -4,7 +4,7 @@ sizeof
 
 Simple function for determining the memory usage of common Python values and objects.
 
-|pypi| |readthedocs| |travis| |coveralls|
+|pypi| |readthedocs| |actions| |coveralls|
 
 .. |pypi| image:: https://badge.fury.io/py/sizeof.svg
    :target: https://badge.fury.io/py/sizeof
@@ -14,9 +14,9 @@ Simple function for determining the memory usage of common Python values and obj
    :target: https://sizeof.readthedocs.io/en/latest/?badge=latest
    :alt: Read the Docs documentation status.
 
-.. |travis| image:: https://travis-ci.com/lapets/sizeof.svg?branch=master
-   :target: https://travis-ci.com/lapets/sizeof
-   :alt: Travis CI build status.
+.. |actions| image:: https://github.com/lapets/sizeof/workflows/lint-test-cover-docs/badge.svg
+   :target: https://github.com/lapets/sizeof/actions/workflows/lint-test-cover-docs.yml
+   :alt: GitHub Actions status.
 
 .. |coveralls| image:: https://coveralls.io/repos/github/lapets/sizeof/badge.svg?branch=master
    :target: https://coveralls.io/github/lapets/sizeof?branch=master
