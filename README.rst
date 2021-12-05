@@ -4,11 +4,15 @@ sizeof
 
 Simple function for determining the memory usage of common Python values and objects.
 
-|pypi| |travis| |coveralls|
+|pypi| |readthedocs| |travis| |coveralls|
 
 .. |pypi| image:: https://badge.fury.io/py/sizeof.svg
    :target: https://badge.fury.io/py/sizeof
    :alt: PyPI version and link.
+
+.. |readthedocs| image:: https://readthedocs.org/projects/sizeof/badge/?version=latest
+   :target: https://sizeof.readthedocs.io/en/latest/?badge=latest
+   :alt: Read the Docs documentation status.
 
 .. |travis| image:: https://travis-ci.com/lapets/sizeof.svg?branch=master
    :target: https://travis-ci.com/lapets/sizeof
