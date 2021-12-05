@@ -2,7 +2,7 @@
 sizeof
 ======
 
-Simple function for measuring the size in memory of common Python data structures.
+Simple function for determining the memory usage of common Python values and objects.
 
 |pypi| |travis| |coveralls|
 
@@ -26,6 +26,33 @@ The library can be imported in the usual ways::
 
     import sizeof
     from sizeof import sizeof
+
+The ``sizeof`` function can be applied to any value or object. By default, the function returns the memory consumed by that value or object (and **not** by any of the objects to which it may contain references).
+
+    >>> from sizeof import sizeof
+    >>> sizeof(123.0123)
+    16
+
+The amount of memory consumed for any given value or object is in part determined by the host architecture and the version of Python being used. The ``arch`` function can be used to determine whether the architecture is 32-bit or 64-bit::
+
+    >>> from sizeof import arch
+    >>> arch()
+    32
+
+The ``deep`` argument makes it possible to calculate the memory consumed by an object and all of it descendants by reference::
+
+    >>> sizeof([]) # Size of an empty list.
+    28
+    >>> sizeof([1]), sizeof([1, 2]) # Size of reference is 4.
+    (32, 36)
+    >>> sizeof(3) # Size of an integer.
+    14
+    >>> sizeof([1, 2, 3]) == 28 + (3 * 4)
+    True
+    >>> sizeof([1, 2, 3], deep=True) == 28 + (3 * (4 + 14))
+    True
+
+Note that all of the examples above may lead to different results on your system and in your environment.
 
 Testing and Conventions
 -----------------------
