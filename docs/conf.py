@@ -51,6 +51,15 @@ exclude_patterns = ['_build']
 autodoc_member_order = 'bysource'
 autodoc_preserve_defaults = True
 
+# Remove private parameter from rendered signature.
+def process_signature(app, what, name, obj, options, signature, return_annotation):
+    if signature and '_exclude' in signature:
+        signature = signature.split('_exclude')[0] + ")"
+    return (signature, return_annotation)
+
+def setup(app):
+    app.connect("autodoc-process-signature", process_signature)
+
 
 # -- Options for HTML output -------------------------------------------------
 
