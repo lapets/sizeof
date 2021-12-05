@@ -33,7 +33,7 @@ The library can be imported in the usual ways::
     import sizeof
     from sizeof import sizeof
 
-The ``sizeof`` function can be applied to any value or object. By default, the function returns the memory consumed by that value or object (and **not** by any of the objects to which it may contain references).
+The ``sizeof`` function can be applied to any value or object. By default, the function returns the memory consumed by that value or object (and **not** by any of the objects to which it may contain references)::
 
     >>> from sizeof import sizeof
     >>> sizeof(123.0123)
