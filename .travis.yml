@@ -9,6 +9,7 @@ matrix:
       python:
         - "3.8"
       install:
+        - pip install -r docs/requirements.txt
         - pip install pylint
         - pip install coveralls
         - pip install .
@@ -18,6 +19,7 @@ matrix:
       osx_image: xcode10.2
       language: shell
       install:
+        - sudo python3 -m pip install -r docs/requirements.txt
         - sudo python3 -m pip install pylint
         - sudo python3 -m pip install coverage
         - sudo python3 -m pip install nose
@@ -28,10 +30,12 @@ matrix:
         - choco install python --version=3.8.3
       env: PATH=/c/Python38:/c/Python38/Scripts:$PATH
       install:
+        - pip install -r docs/requirements.txt
         - pip install pylint
         - pip install coverage
         - pip install nose
         - pip install .
 script:
+  - cd docs && sphinx-apidoc -f -E --templatedir=_templates -o _source .. ../setup.py && make html && cd ..
   - pylint sizeof
   - nosetests
