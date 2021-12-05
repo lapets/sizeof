@@ -1,2 +1,2 @@
-"""Give users direct access to the function."""
+"""Gives users direct access to the function."""
 from sizeof.sizeof import sizeof, arch

@@ -1,16 +1,14 @@
-"""Function for measuring memory usage of objects.
-
-Simple function for measuring the size in memory of
-common Python data structures.
 """
-
+Simple function for measuring the memory used by
+common Python values and objects.
+"""
 from __future__ import annotations
 import doctest
 import sys
 import struct
 import collections
 
-def arch():
+def arch() -> int:
     """
     Determine the architecture.
 
@@ -19,7 +17,7 @@ def arch():
     """
     return struct.calcsize("P") * 8
 
-def sizeof(obj, deep=False, _exclude=None):
+def sizeof(obj, deep=False, _exclude=None) -> int:
     """
     Estimate the memory consumption of a Python object (either
     the root object itself exclusively or, in the case of a deep
@@ -52,6 +50,13 @@ def sizeof(obj, deep=False, _exclude=None):
     >>> zs = {frozenset([1, 2, 3]): [1, 2, 3], frozenset(['a']): 'bc'}
     >>> sys.getsizeof(xs) == sizeof(xs)
     True
+    >>> sys.getsizeof(range(0,10)) == sizeof(range(0,10))
+    True
+
+    When the ``deep`` argument is ``True``, the total amount of
+    memory consumed by the object and all of its descendants by
+    reference is calculated (with deduplication).
+
     >>> sys.getsizeof(xs) < sizeof(xs, deep=True)
     True
     >>> sizeof(set(xs), deep=True) > sys.getsizeof(set(xs))
@@ -69,8 +74,6 @@ def sizeof(obj, deep=False, _exclude=None):
     >>> sizeof([xs, xs], deep=True) < sizeof([xs, [1, 2, 3]], deep=True)
     True
     >>> sizeof([xs], deep=True, _exclude=set([id(xs)])) == sizeof([xs])
-    True
-    >>> sys.getsizeof(range(0,10)) == sizeof(range(0,10))
     True
     >>> sizeof(range(0,10), deep=True) > sizeof(range(0,10))
     True
