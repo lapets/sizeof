@@ -5,7 +5,7 @@ with open("README.rst", "r") as fh:
 
 # The lines below can be parsed by `docs/conf.py`.
 name = "sizeof"
-version = "0.2.0"
+version = "0.2.1"
 
 setup(
     name=name,
@@ -16,8 +16,8 @@ setup(
     url="https://github.com/lapets/sizeof",
     author="Andrei Lapets",
     author_email="a@lapets.io",
-    description="Simple function for measuring the size in memory "+\
-                "of common Python data structures.",
+    description="Simple function for determining the memory usage "+\
+                "of common Python values and objects.",
     long_description=long_description,
     long_description_content_type="text/x-rst",
     test_suite="nose.collector",

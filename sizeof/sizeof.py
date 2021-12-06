@@ -1,6 +1,6 @@
 """
-Simple function for measuring the memory used by
-common Python values and objects.
+Simple function for determining the memory usage of common Python
+values and objects.
 """
 from __future__ import annotations
 import doctest
