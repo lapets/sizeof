@@ -5,7 +5,7 @@ with open("README.rst", "r") as fh:
 
 # The lines below can be parsed by `docs/conf.py`.
 name = "sizeof"
-version = "0.2.1"
+version = "0.3.0"
 
 setup(
     name=name,
@@ -20,6 +20,4 @@ setup(
                 "of common Python values and objects.",
     long_description=long_description,
     long_description_content_type="text/x-rst",
-    test_suite="nose.collector",
-    tests_require=["nose"],
 )
