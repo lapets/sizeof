@@ -18,8 +18,8 @@ Simple function for determining the memory usage of common Python values and obj
    :target: https://github.com/lapets/sizeof/actions/workflows/lint-test-cover-docs.yml
    :alt: GitHub Actions status.
 
-.. |coveralls| image:: https://coveralls.io/repos/github/lapets/sizeof/badge.svg?branch=master
-   :target: https://coveralls.io/github/lapets/sizeof?branch=master
+.. |coveralls| image:: https://coveralls.io/repos/github/lapets/sizeof/badge.svg?branch=main
+   :target: https://coveralls.io/github/lapets/sizeof?branch=main
    :alt: Coveralls test coverage summary.
 
 Package Installation and Usage
