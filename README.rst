@@ -24,7 +24,7 @@ Simple function for determining the memory usage of common Python values and obj
 
 Installation and Usage
 ----------------------
-The package is available on `PyPI <https://pypi.org/project/sizeof>`__::
+This library is available as a `package on PyPI <https://pypi.org/project/sizeof>`__::
 
     python -m pip install sizeof
 
@@ -33,19 +33,25 @@ The library can be imported in the usual ways::
     import sizeof
     from sizeof import sizeof
 
-The ``sizeof`` function can be applied to any value or object. By default, the function returns the memory consumed by that value or object (and **not** by any of the objects to which it may contain references)::
+.. |sizeof| replace:: ``sizeof``
+.. _sizeof: https://sizeof.readthedocs.io/en/latest/_source/sizeof.html#sizeof.sizeof.sizeof
+
+The |sizeof|_ function can be applied to any value or object. By default, the function returns the memory consumed by that value or object (and **not** by any of the objects to which it may contain references)::
 
     >>> from sizeof import sizeof
     >>> sizeof(123.0123)
     16
 
-The amount of memory consumed for any given value or object is in part determined by the host architecture and the version of Python being used. The ``arch`` function can be used to determine whether the architecture is 32-bit or 64-bit::
+.. |arch| replace:: ``arch``
+.. _arch: https://sizeof.readthedocs.io/en/latest/_source/sizeof.html#sizeof.sizeof.arch
+
+The amount of memory consumed for any given value or object is in part determined by the host architecture and the version of Python being used. The |arch|_ function can be used to determine whether the architecture is 32-bit or 64-bit::
 
     >>> from sizeof import arch
     >>> arch()
     32
 
-The ``deep`` argument makes it possible to calculate the memory consumed by an object and all of it descendants by reference::
+The optional ``deep`` argument of the |sizeof|_ function makes it possible to calculate the memory consumed by an object and all of it descendants by reference::
 
     >>> sizeof([]) # Size of an empty list.
     28
@@ -58,7 +64,7 @@ The ``deep`` argument makes it possible to calculate the memory consumed by an o
     >>> sizeof([1, 2, 3], deep=True) == 28 + (3 * (4 + 14))
     True
 
-Note that all of the examples above may lead to different results on your system and in your environment.
+Note that all of the examples above may return different results on your system and in your environment.
 
 Development
 -----------

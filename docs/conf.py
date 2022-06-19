@@ -36,7 +36,9 @@ copyright = '2020, Andrei Lapets' # Period omitted; precedes punctuation.
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.doctest',
-    'sphinx.ext.napoleon'
+    'sphinx.ext.napoleon',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.viewcode'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -59,6 +61,11 @@ def process_signature(app, what, name, obj, options, signature, return_annotatio
 
 def setup(app):
     app.connect("autodoc-process-signature", process_signature)
+
+# Allow references/links to definitions found in the Python documentation.
+intersphinx_mapping = {
+    'python': ('https://docs.python.org/3', None),
+}
 
 
 # -- Options for HTML output -------------------------------------------------

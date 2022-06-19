@@ -3,6 +3,7 @@ Simple function for determining the memory usage of common Python
 values and objects.
 """
 from __future__ import annotations
+from typing import Any
 import doctest
 import sys
 import struct
@@ -17,7 +18,7 @@ def arch() -> int:
     """
     return struct.calcsize("P") * 8
 
-def sizeof(obj, deep=False, _exclude=None) -> int:
+def sizeof(obj: Any, deep: bool = False, _exclude: set[int] = None) -> int:
     """
     Estimate the memory consumption of a Python object (either
     the root object itself exclusively or, in the case of a deep
