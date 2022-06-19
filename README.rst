@@ -24,7 +24,7 @@ Simple function for determining the memory usage of common Python values and obj
 
 Installation and Usage
 ----------------------
-The package is available on `PyPI <https://pypi.org/project/sizeof/>`_::
+The package is available on `PyPI <https://pypi.org/project/sizeof>`__::
 
     python -m pip install sizeof
 
@@ -70,7 +70,7 @@ Documentation
 ^^^^^^^^^^^^^
 .. include:: toc.rst
 
-The documentation can be generated automatically from the source files using `Sphinx <https://www.sphinx-doc.org/>`_::
+The documentation can be generated automatically from the source files using `Sphinx <https://www.sphinx-doc.org>`__::
 
     python -m pip install .[docs]
     cd docs
@@ -78,27 +78,27 @@ The documentation can be generated automatically from the source files using `Sp
 
 Testing and Conventions
 ^^^^^^^^^^^^^^^^^^^^^^^
-All unit tests are executed and their coverage is measured when using `pytest <https://docs.pytest.org/>`_ (see ``setup.cfg`` for configuration details)::
+All unit tests are executed and their coverage is measured when using `pytest <https://docs.pytest.org>`__ (see ``setup.cfg`` for configuration details)::
 
     python -m pip install .[test]
     python -m pytest
 
-Alternatively, all unit tests are included in the module itself and can be executed using `doctest <https://docs.python.org/3/library/doctest.html>`_::
+Alternatively, all unit tests are included in the module itself and can be executed using `doctest <https://docs.python.org/3/library/doctest.html>`__::
 
     python sizeof/sizeof.py -v
 
-Style conventions are enforced using `Pylint <https://www.pylint.org/>`_::
+Style conventions are enforced using `Pylint <https://www.pylint.org>`__::
 
     python -m pip install .[lint]
     python -m pylint sizeof
 
 Contributions
 ^^^^^^^^^^^^^
-In order to contribute to the source code, open an issue or submit a pull request on the `GitHub page <https://github.com/lapets/sizeof>`_ for this library.
+In order to contribute to the source code, open an issue or submit a pull request on the `GitHub page <https://github.com/lapets/sizeof>`__ for this library.
 
 Versioning
 ^^^^^^^^^^
-The version number format for this library and the changes to the library associated with version number increments conform with `Semantic Versioning 2.0.0 <https://semver.org/#semantic-versioning-200>`_.
+The version number format for this library and the changes to the library associated with version number increments conform with `Semantic Versioning 2.0.0 <https://semver.org/#semantic-versioning-200>`__.
 
 Publishing
 ^^^^^^^^^^
