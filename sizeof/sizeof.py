@@ -16,7 +16,7 @@ def arch() -> int:
     >>> arch() in [32, 64]
     True
     """
-    return struct.calcsize("P") * 8
+    return struct.calcsize('P') * 8
 
 def sizeof(obj: Any, deep: bool = False, _exclude: set[int] = None) -> int:
     """
@@ -110,5 +110,5 @@ def sizeof(obj: Any, deep: bool = False, _exclude: set[int] = None) -> int:
         'object not supported by current version of sizeof'
     )
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     doctest.testmod() # pragma: no cover
