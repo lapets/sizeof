@@ -37,7 +37,7 @@ Examples
 ^^^^^^^^
 
 .. |sizeof| replace:: ``sizeof``
-.. _sizeof: https://sizeof.readthedocs.io/en/0.5.1/_source/sizeof.html#sizeof.sizeof.sizeof
+.. _sizeof: https://sizeof.readthedocs.io/en/0.6.0/_source/sizeof.html#sizeof.sizeof.sizeof
 
 The |sizeof|_ function can be applied to any value or object. By default, the function returns the memory consumed by that value or object (and **not** by any of the objects to which it may contain references)::
 
@@ -46,7 +46,7 @@ The |sizeof|_ function can be applied to any value or object. By default, the fu
     16
 
 .. |arch| replace:: ``arch``
-.. _arch: https://sizeof.readthedocs.io/en/0.5.1/_source/sizeof.html#sizeof.sizeof.arch
+.. _arch: https://sizeof.readthedocs.io/en/0.6.0/_source/sizeof.html#sizeof.sizeof.arch
 
 The amount of memory consumed for any given value or object is in part determined by the host architecture and the version of Python being used. The |arch|_ function can be used to determine whether the architecture is 32-bit or 64-bit::
 
@@ -94,7 +94,7 @@ Alternatively, all unit tests are included in the module itself and can be execu
 
     python src/sizeof/sizeof.py -v
 
-Style conventions are enforced using `Pylint <https://pylint.pycqa.org>`__::
+Style conventions are enforced using `Pylint <https://pylint.readthedocs.io>`__::
 
     python -m pip install .[lint]
     python -m pylint src/sizeof

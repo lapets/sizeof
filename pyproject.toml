@@ -1,6 +1,6 @@
 [project]
 name = "sizeof"
-version = "0.5.1"
+version = "0.6.0"
 description = """\
     Simple function for determining the memory usage \
     of common Python values and objects.\
