@@ -7,7 +7,7 @@ from typing import Any
 import doctest
 import sys
 import struct
-import collections
+import collections.abc
 
 def arch() -> int:
     """
