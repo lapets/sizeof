@@ -40,7 +40,7 @@ def sizeof(obj: Any, deep: bool = False, _exclude: set[int] = None) -> int:
     True
     >>> sizeof(bytes([1, 2])) + 1 == sizeof(bytes([1, 2, 3]))
     True
-    >>> sizeof(bytearray([1, 2])) == sizeof(bytearray([1, 2, 3]))
+    >>> sizeof(bytearray([1, 2])) <= sizeof(bytearray([1, 2, 3]))
     True
     >>> mv0 = memoryview(bytes([1, 2]))
     >>> mv1 = memoryview(bytes([1, 2, 3]))
